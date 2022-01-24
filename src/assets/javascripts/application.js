@@ -1,3 +1,5 @@
+import { initialize_horizontal_tabs } from '/src/assets/javascripts/horizontal_tabs.js';
+
 document.addEventListener("DOMContentLoaded", function() {
   var geoJson = {
     "type": "FeatureCollection",
@@ -35,9 +37,24 @@ document.addEventListener("DOMContentLoaded", function() {
   var geojson_container = document.getElementById('js-target-geojson-container');
 
   function writeGeomanGeojson() {
-    layer_geojson = map.pm.getGeomanLayers(true).toGeoJSON();
-    geojson_container.innerHTML = JSON.stringify(layer_geojson, null, 2);
+    var layer_geojson = map.pm.getGeomanLayers(true).toGeoJSON();
+    var layer_properties = {
+      'properties': {
+        'title': document.getElementById('js-new-title').value,
+        'description': document.getElementById('js-new-description').value,
+        'from-date': document.getElementById('js-new-from-date').value,
+        'to-date': document.getElementById('js-new-to-date').value,
+      },
+    };
+    var combined_json = {
+      ...layer_geojson,
+      ...layer_properties,
+    };
+
+    geojson_container.innerHTML = JSON.stringify(combined_json, null, 2);
   }
 
   load_geojson_from_geoman.addEventListener('click', writeGeomanGeojson);
+
+  initialize_horizontal_tabs();
 });
