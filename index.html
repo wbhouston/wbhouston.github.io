@@ -37,7 +37,7 @@
           data-active-columns='border-blue-700 pointer-events-none text-blue-700 font-bold'
           data-inactive-columns='pointer-events-auto text-black'
         >
-          New Trip
+          Current Trip
         </label>
         <label
           class='js-tabs-trigger mt-2 ml-2 px-2 py-1 border-x-2 border-t-2 border-grey-700 rounded-sm text-md'
@@ -45,7 +45,7 @@
           data-active-columns='border-blue-700 pointer-events-none text-blue-700 font-bold'
           data-inactive-columns='pointer-events-auto text-black'
         >
-          View Trips
+          Load Trips
         </label>
       </div>
       <div>
@@ -66,10 +66,17 @@
           </div>
           <div>
             <a class='px-2 py-1 border-2 rounded-sm text-sm' id='js-trigger-load-geojson'>
-              Load GeoJSON
+              Reload features
             </a>
           </div>
           <div class='text-xs'>
+            <div class='js-trip-items-target space-y-2'>
+              <div class='border-2 p-2 text-gray-600'>
+                <p>I have two general ideas for how to handle the editing of the
+                descriptions of trip items. One, I could do all the editing in
+                the Current Trip area</p>
+              </div>
+            </div>
             <pre id='js-target-geojson-container'>
             </pre>
           </div>
@@ -78,9 +85,8 @@
       <div>
         <input type='radio' class='peer hidden' name='right-tabs'
         id='right-tabs_view-trips'></input>
-        <div class='peer-checked:block hidden space-y-4 ml-4'>
-          <div class='mt-4'>
-            This place
+        <div class='peer-checked:block hidden mx-4'>
+          <div class='mt-4 space-y-4' id='js-trip-list'>
           </div>
         </div>
       </div>

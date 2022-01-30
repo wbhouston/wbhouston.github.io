@@ -1,0 +1,22 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.848383,
+          31.995106
+        ]
+      }
+    }
+  ],
+  "properties": {
+    "title": "2022 Tybee New Year",
+    "description": "2021-12-27: Traveled with Ben and Stef to Tybrisa.\n2021-12-28: Rented bikes at Fat Tire Bikes, rode to Huc-a-poo's for lunch, rode to theater to pick up shirts, other stuff, Matt and Whit showed up, tacos for dinner.",
+    "from-date": "2021-12-27",
+    "to-date": "2022-01-02"
+  }
+}
