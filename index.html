@@ -18,17 +18,18 @@
   <div class='h-screen w-screen'>
     <input type='checkbox' class='hidden peer' id='right-panel'
     checked='checked'></input>
-    <div class='fixed inset-y-0 left-0 right-0 peer-checked:right-96 z-0 m-0 p-0 z-0' id='map'> </div>
+    <div class='fixed inset-y-0 left-0 right-0 peer-checked:right-1/3 z-0 m-0 p-0 z-0' id='map'> </div>
     <div class='relative mt-4 ml-14 bg-white float-left border-2
     px-2 py-1
       rounded-sm z-50' id='map-title'>
       <h1 class='font-bold text-2xl'>Travel Journal</h1>
     </div>
-    <div class='relative right-0 peer-checked:right-96 z-50'>
+    <div class='relative right-0 peer-checked:right-1/3 z-50'>
       <label for='right-panel' class='float-right bg-white border-y-2 border-l-2
         mt-4 py-2 px-1 z-50'>+</label>
     </div>
-    <div class='fixed inset-y-0 -right-96 h-full peer-checked:right-0 peer-checked:w-96 w-0 bg-white z-50
+    <div class='fixed inset-y-0 -right-1/3 h-full peer-checked:right-0
+    peer-checked:w-1/3 w-0 bg-white z-50
       overflow-y-auto border-l-4'>
       <div class='relative flex border-b-4 border-grey-700 active'>
         <label
@@ -51,7 +52,7 @@
       <div>
         <input type='radio' class='peer hidden' name='right-tabs'
         checked='checked' id='right-tabs_new-trip'></input>
-        <div class='peer-checked:block hidden space-y-4 ml-4'>
+        <div class='peer-checked:block hidden space-y-4 mx-4'>
           <div class='mt-4'>
             <input class='p-1 border-2' type='text' id='js-new-title' placeholder='Title'></input>
           </div>
@@ -70,12 +71,7 @@
             </a>
           </div>
           <div class='text-xs'>
-            <div class='js-trip-items-target space-y-2'>
-              <div class='border-2 p-2 text-gray-600'>
-                <p>I have two general ideas for how to handle the editing of the
-                descriptions of trip items. One, I could do all the editing in
-                the Current Trip area</p>
-              </div>
+            <div id='js-trip-items-target' class='space-y-2'>
             </div>
             <pre id='js-target-geojson-container'>
             </pre>

@@ -24,10 +24,25 @@ async function fetch_json(url) {
 
 async function add_json_to_map(url) {
   var trip_json = await fetch_json(url);
+  var trip_items_list = document.getElementById('js-trip-items-target');
+  trip_items_list.innerHTML = '';
+  var trip_item_html = await fetch_html('/src/components/trip-item.html');
 
   loaded_feature_group.clearLayers();
   edited_feature_group.clearLayers();
-  L.geoJSON(trip_json).addTo(loaded_feature_group);
+  L.geoJSON(trip_json, {
+    onEachFeature: function (feature, layer) {
+      var item_html_copy = trip_item_html;
+      trip_items_list.innerHTML +=
+        item_html_copy.
+          replace('TITLE', feature.properties.title).
+          replace('DESCRIPTION', feature.properties.description);
+
+      if (feature.properties.description) {
+        layer.bindPopup('<p>' + feature.properties.description + '</p>');
+      }
+    }
+  }).addTo(loaded_feature_group);
 }
 
 async function load_trip_index() {
@@ -86,8 +101,8 @@ function writeGeomanGeojson() {
 
 document.addEventListener("DOMContentLoaded", function() {
   map = L.map('map', {
-    center: [41.77, -72.69], // EDIT coordinates to re-center map
-    zoom: 6,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
+    center: [31.998743, -80.847221],
+    zoom: 15,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
     scrollWheelZoom: true,
     tap: false
   });

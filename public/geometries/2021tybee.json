@@ -3,12 +3,138 @@
   "features": [
     {
       "type": "Feature",
-      "properties": {},
+      "properties":
+        {
+          "title": "IGA",
+          "description": "They might be out of greens if we get there closer to New Year's Day. They don't have any good flour, so bring some with."
+
+        },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -80.848383,
-          31.995106
+          -80.847221,
+          31.998743
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties":
+        {
+          "title": "IGA",
+          "description": "Call ahead if we're going to be late and they'll leave a key."
+        },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.846646,
+          31.993983
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties":
+        {
+          "title": "IGA",
+          "description": "This place was good, very vegan-friendly, and expensive. $9 drinks, $15ish for entrees."
+        },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.849048,
+          32.01525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties":
+        {
+          "title": "IGA",
+          "description": "Stef recommended Huc-a-poos once on the way in and maybe one more time. We are usually hungry and ready to move around that first day, so that's good. We can always wait to end up in that general area before we eat there, too. For coffee, be sure to get there before the other shops open up. That's when the line gets long."
+        },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.857154,
+          32.020433
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties":
+        {
+          "title": "IGA",
+          "description": "I always forget that there is this route through the neighborhoods. It's much more pleasant than the main road!"
+        },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -80.85732,
+            32.021041
+          ],
+          [
+            -80.856001,
+            32.021223
+          ],
+          [
+            -80.85422,
+            32.021533
+          ],
+          [
+            -80.852873,
+            32.021537
+          ],
+          [
+            -80.852455,
+            32.021437
+          ],
+          [
+            -80.852476,
+            32.021778
+          ],
+          [
+            -80.850996,
+            32.022298
+          ],
+          [
+            -80.849488,
+            32.02294
+          ],
+          [
+            -80.848914,
+            32.023281
+          ],
+          [
+            -80.8487,
+            32.023372
+          ],
+          [
+            -80.845487,
+            32.023367
+          ],
+          [
+            -80.844589,
+            32.022265
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties":
+        {
+          "title": "IGA",
+          "description": "This icecream place, Savannah Praline Company, is much better than the one across the street that sometimes put Pinesol in the soap dispensers :|."
+        },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.842521,
+          32.012438
         ]
       }
     }
