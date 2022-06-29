@@ -1,75 +1,13 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <style>
-    body {
-      font-family: monospace;
-      color: white;
-    }
-    pre {
-      overflow: auto;
-      padding: 1rem;
-    }
-    body,
-    pre {
-      background: #000000;
-    }
-  </style>
-
-  <!-- require ArcGIS REST JS libraries from https://unpkg.com -->
-  <script src="https://unpkg.com/@esri/arcgis-rest-request@4.0.0/dist/bundled/request.umd.js"></script>
-  <script src="https://unpkg.com/@esri/arcgis-rest-feature-service@4.0.0/dist/bundled/feature-service.umd.js"></script>
-</head>
-<body class='font-sans text-sm'>
-  <a href="https://www.arcgis.com/sharing/rest/oauth2/authorize?client_id=MaDm9SQi6MlFzZfr&response_type=token&expiration=20160&redirect_uri=https://wbhouston.github.io/" >
-    Sign In to ArcGIS
-  </a>
-  <pre id="result-add"></pre>
-
-  <script>
-    const match = (window.location.hash) ?
-      window.location.hash.match(/#access_token=([^&]+)/) :
-      false;
-
-    console.log(match);
-
-    if (match[1]) {
-      const access_token = match[1];
-      const featureServiceLayerUrl = "https://services3.arcgis.com/GsttzTDS96S6mU36/arcgis/rest/services/cemetery_points/FeatureServer/0";
-
-      const featureToAdd = {
-        attributes: {
-          id: 101,
-          name: "editing test",
-        },
-        geometry: {
-          x: -84.592474,
-          y: 35.437571,
-          spatialReference: {
-            wkid: 4326
-          }
-        }
-      };
-
-      arcgisRest
-        .addFeatures({
-          url: featureServiceLayerUrl,
-          features: [featureToAdd],
-          authentication: access_token
-        })
-        .then(handleAdded);
-
-      function handleAdded(response) {
-        console.log(response);
-        document.getElementById("result-add").textContent = JSON.stringify(response, null, 2);
-
-        if (!response.addResults[0].success) {
-          // stop early if adding a new feature was not successful
-          return;
-        }
-      }
-    }
-
-  </script>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Svelte + Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
 </html>
